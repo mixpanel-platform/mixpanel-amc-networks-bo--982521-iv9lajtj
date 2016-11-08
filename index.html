@@ -1,15 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
+<head>
+	<title>Media Dashboard</title>
+	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/metricMeters.css">
+    <link rel="stylesheet" type="text/css" href="css/charts.css">
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
-  </head>
-  <body class="mixpanel-platform-body">
-    <h1>Hello, World!</h1>
-    <script>
-      // Run queries and display results here
-    </script>
-  </body>
+</head>
+<body class="mixpanel-platform-body report-width-wrapper">
+	<!-- Begin Report Header -->
+	<div class="section report-header">
+		<div class="report-header-date"></div>
+		<img class="report-header-logo" src="assets/Amc_logo.png" />
+	</div>
+	<!-- End Report Header -->
+	<!-- Begin High-Level Metrics -->
+	<div class="section general-metrics-list">
+		<!-- First Meter Metric -->
+		<div class="general-metric meter-one">
+			<div class="meter-header">Current<br>Active Users</div>
+			<div class="meter-background">
+				<div class="meter-value" id="firstmeter-meter-value">
+					235K
+				</div>
+				<svg viewBox="0 0 32 32" class="meter-svg">
+					<circle id="firstmeter-progress" cx="16" cy="16" r="16" class="meter-progress"></circle>
+				</svg>
+			</div>
+			<div class="meter-subtext">
+				<img class="meter-subtext-arrow" src="assets/uparrow_green.png">
+				<span class="meter-subtext-green">3.1%</span> week over week
+			</div>
+		</div>
+		<!-- Second Meter Metric -->
+		<div class="general-metric meter-two">
+			<div class="meter-header">Signups Today</div>
+			<div class="meter-background">
+				<div class="meter-value" id="secondmeter-meter-value">
+					465
+				</div>
+				<svg viewBox="0 0 32 32" class="meter-svg">
+					<circle id="secondmeter-progress" cx="16" cy="16" r="16" class="meter-progress"></circle>
+				</svg>
+			</div>
+			<div class="meter-subtext">
+				<img class="meter-subtext-arrow" src="assets/uparrow_green.png">
+				<span class="meter-subtext-green">0.6%</span> week over week
+			</div>
+		</div>
+		<!-- Third Meter Metric -->
+		<div class="general-metric meter-three">
+			<div class="meter-header">Article<br>Completion Rate</div>
+			<div class="meter-background">
+				<div class="meter-value" id="thirdmeter-meter-value">
+					28.4%
+				</div>
+				<svg viewBox="0 0 32 32" class="meter-svg">
+					<circle id="thirdmeter-progress" cx="16" cy="16" r="16" class="meter-progress"></circle>
+				</svg>
+			</div>
+			<div class="meter-subtext">
+				<img class="meter-subtext-arrow" src="assets/downarrow_red.png">
+				<span class="meter-subtext-red">1.1%</span> week over week
+			</div>
+		</div>
+	</div>
+	<!-- End High-Level Metrics -->
+	<!-- Begin Live Platform Section -->
+	<div class="section live-platforms">
+		<div class="section-header">
+			Stream Traffic by Platform (Live)
+		</div>
+		<div id="live-platforms"></div>
+	</div>
+	<!-- End Live Platform Section -->
+	<!-- Start Two-column display -->
+	<div class="two-column-wrapper">
+		<div class="left-column">
+			<div class="section">
+				<div class="section-header">
+					Top Sections Viewed Today
+				</div>
+				<div class="top-sections-chart"></div>
+			</div>
+			<div class="section">
+				<div class="section-header">
+					Content Shares by Platform
+				</div>
+				<div class="content-shares-chart"></div>
+			</div>
+		</div>
+		<div class="right-column">
+			<div class="section">
+				<div class="section-header">
+					Top Content (Last 12 hours)
+				</div>
+				<div class="top-content-table">
+					<table>
+						<tbody id="content-table-body"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End two-column display -->
+	<script type="text/javascript" src="js/livestream.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/topContent.js"></script>
+</body>
 </html>

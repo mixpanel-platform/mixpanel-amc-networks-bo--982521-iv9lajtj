@@ -1,0 +1,170 @@
+.general-metric {
+    display: inline-block;
+}
+
+.meter-background, .meter-value {
+	position: relative;
+    border-radius: 50%;
+}
+
+.general-metrics-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 25px;
+}
+
+.meter-header {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.meter-subtext {
+    text-align: center;
+    font-size: 1.45em;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+.meter-subtext-green {
+    color: #0d920b;
+}
+
+.meter-subtext-red {
+    color: #b73434;
+}
+
+.meter-subtext-arrow {
+    height: 20px;
+    vertical-align: text-top;
+}
+
+.meter-background {
+    background-color: #dfe2ec;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    margin: 0 auto;
+}
+
+/* Meter-Specific Text CSS (reusable id with name of each meter) */
+#METERNAME-meter-value {
+	color: #e35110;
+}
+
+#firstmeter-meter-value {
+    color: #0d920b;
+}
+
+#secondmeter-meter-value {
+    color: #0d920b;
+}
+
+#thirdmeter-meter-value {
+    color: #b73434;
+}
+
+.meter-value {
+    background: #fff;
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    background-color: #fff;
+    z-index: 2;
+    font-size: 1.875rem;
+    line-height: 130px;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+.meter-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 1;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    border-radius: 50%;
+}
+
+/* Meter-specific CSS for circle stroke color and stroke animation (reusable id with name of each meter) */
+#METERNAME-progress {
+    stroke: blue;
+	animation: METERNAME-value 1000ms ease-out 250ms 1 normal forwards;    
+}
+
+#firstmeter-progress {
+    stroke: #61bf60;
+    animation: firstmeter-value 1000ms ease-out 250ms 1 normal forwards;
+}
+
+#secondmeter-progress {
+    stroke: #61bf60;
+    animation: secondmeter-value 1000ms ease-out 250ms 1 normal forwards;
+}
+
+#thirdmeter-progress {
+    stroke: #d84b59;
+    animation: thirdmeter-value 1000ms ease-out 250ms 1 normal forwards;
+}
+
+.meter-progress {
+	stroke-width: 32;
+    stroke-dasharray: 0 100;
+    fill: transparent;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* Meter-specific animation frames for filling radial display
+	(reusable, just copy with individual meter's name subbed for METERNAME)
+	the 100% keyframe determines what percentage of the circle is circumscribed,
+	and in this example uses 50% filling */
+@keyframes METERNAME-value {
+	0% {
+		stroke-dasharray: 0 100;
+	}
+
+	100% {
+		/* first value of stroke-dasharray fills circle */
+		stroke-dasharray: 50 100;
+	}
+}
+
+@keyframes firstmeter-value {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+
+    100% {
+        stroke-dasharray: 110 100;
+    }
+}
+
+@keyframes secondmeter-value {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+
+    100% {
+        stroke-dasharray: 110 100;
+    }
+}
+
+@keyframes thirdmeter-value {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+
+    100% {
+        stroke-dasharray: 29 100;
+    }
+}
