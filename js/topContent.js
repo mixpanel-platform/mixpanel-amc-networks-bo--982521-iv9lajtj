@@ -12,15 +12,15 @@ var topSectionData = {
 // Modify headers by changing first internal array's strings
 // Modify data by changing the subsequent arrays
 var topContentData = [
-	['Content Title', 'Content Age', 'Unique Views'],
-	['The Workshop', '10h 30m', '230,400'],
-	['Crawlspace', '11h 5m', '222,900'],
-	['Catnip', '9h 22m', '215,651'],
-	['Touching the Void', '8h 33m', '209,255'],
-	['Toad Road', '6h 49m', '201,857'],
-	['Citadel', '7h 2m', '194,101'],
-	['Carved', '8h 14m', '188,540'],
-	['A Horrible Way to Die', '5h 57m', '181,253'],
+	['Content Title', 'Total Time Watched', 'Unique Views'],
+	['The Workshop', '500h 30m', '230,400'],
+	['Crawlspace', '450h 5m', '222,900'],
+	['Catnip', '423h 22m', '215,651'],
+	['Touching the Void', '401h 33m', '209,255'],
+	['Toad Road', '300h 49m', '201,857'],
+	['Citadel', '210h 2m', '194,101'],
+	['Carved', '150h 14m', '188,540'],
+	['A Horrible Way to Die', '50h 57m', '181,253'],
 ];
 
 // To change content share types, change the names of the keys here (up to 4 names max)
